@@ -1,5 +1,5 @@
-import { AllCharacters } from "./components/AllCharacters";
-import { Header } from "./components/Header";
+import { AllCharacters } from "./components/AllCharacters/AllCharacters";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (

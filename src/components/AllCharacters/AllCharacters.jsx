@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getAllCharacters } from "../services/rickMortyApi";
-import "../app.css";
-import { SingleCharacter } from "./SingleCharacter";
+import { getAllCharacters } from "../../services/rickMortyApi";
+import { SingleCharacter } from "../Character/SingleCharacter";
+import "../../app.css";
 
 export const AllCharacters = () => {
   const [allCharacters, setAllCharacters] = useState([]);

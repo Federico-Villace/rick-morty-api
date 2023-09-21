@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SingleCharacter } from "./components/SingleCharacter.jsx";
+import { SingleCharacter } from "./components/Character/SingleCharacter";
 import App from "./App.jsx";
 
 const router = createBrowserRouter([
