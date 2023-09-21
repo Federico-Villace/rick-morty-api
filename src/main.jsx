@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SingleCharacter } from "./components/Character/SingleCharacter";
 import App from "./App.jsx";
+import { Character } from "./pages/Character";
 
 const router = createBrowserRouter([
   {
@@ -10,8 +10,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/single-character",
-    element: <SingleCharacter />,
+    path: "/character",
+    element: <Character />,
   },
 ]);
 

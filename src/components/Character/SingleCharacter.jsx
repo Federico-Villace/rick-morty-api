@@ -1,13 +1,16 @@
+/* eslint-disable react/prop-types */
+import { redirect } from "react-router-dom";
+
 export const SingleCharacter = (props) => {
   const { character } = props;
   const { image, name, origin, species, location, status } = character;
 
-  /*useEffect(() => {
-    getSingleCharacter(1).then((data) => setCharacter(data));
-  }, [setCharacter]);*/
+  const handleClick = () => {
+    return redirect("/character");
+  };
 
   return (
-    <li className="character-element">
+    <li className="character-element" onClick={handleClick}>
       <img src={image} />
 
       <div className="character-card-props">
