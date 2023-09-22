@@ -3,6 +3,7 @@ body {
     "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   background-color: #272b33;
+  padding: 10px;
 }
 
 .characters-list-container {
@@ -94,12 +95,55 @@ h5 {
   font-size: 16px;
   margin-block-start: 10px;
   margin-block-end: 5px;
-  display: flex;
-  align-items: center;
 }
 
 label {
   color: white;
   font-size: 20px;
   font-weight: 300;
+}
+
+@media screen and (max-width: 500px) {
+  .characters-list-container {
+    padding: 0;
+  }
+
+  .characters-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-auto-rows: auto;
+    gap: 30px;
+    padding-inline-start: 0;
+
+    text-align: center;
+  }
+
+  .character-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: #3c3e44;
+    transition: all 0.1s ease-in;
+  }
+
+  .header-background {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 10%;
+    z-index: 1;
+    max-height: 300px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-width: -webkit-fill-available;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
 }

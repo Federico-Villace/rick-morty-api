@@ -8,5 +8,5 @@ export const Character = () => {
   useEffect(() => {
     console.log(char);
   }, [char]);
-  return <>hkjahksd</>;
+  return <></>;
 };
