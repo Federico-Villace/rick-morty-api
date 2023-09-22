@@ -1,16 +1,11 @@
 /* eslint-disable react/prop-types */
-import { redirect } from "react-router-dom";
 
 export const SingleCharacter = (props) => {
-  const { character } = props;
-  const { image, name, origin, species, location, status } = character;
-
-  const handleClick = () => {
-    return redirect("/character");
-  };
+  const { character, onSelected } = props;
+  const { image, name, origin, species, location, status, id } = character;
 
   return (
-    <li className="character-element" onClick={handleClick}>
+    <li className="character-element" onClick={() => onSelected(id)}>
       <img src={image} />
 
       <div className="character-card-props">
