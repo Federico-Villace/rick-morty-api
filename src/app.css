@@ -78,7 +78,8 @@ h1 {
   display: flex;
   position: absolute;
   align-items: center;
-  left: 38%;
+  left: 45%;
+  bottom: 0;
   z-index: 1;
   max-height: 300px;
 }
@@ -133,7 +134,7 @@ label {
     display: flex;
     position: absolute;
     align-items: center;
-    left: 10%;
+    left: 15%;
     z-index: 1;
     max-height: 300px;
   }

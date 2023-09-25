@@ -3,8 +3,8 @@ export const Header = () => {
     <div className="header">
       <h1>Rick and Morty API</h1>
       <svg
-        width="378"
-        height="376"
+        width="250"
+        height="250"
         viewBox="0 0 378 376"
         fill="none"
         className="header-background"
