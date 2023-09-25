@@ -6,8 +6,7 @@ export const Character = () => {
   const location = useLocation();
   const char = location.state;
 
-  const { getEpisodesFromCharacter } = useCharacter();
-  const [episodesInfo, setEpisodesInfo] = useState([]);
+  const { getEpisodesFromCharacter, episodesInfo } = useCharacter();
 
   const [episodes, setEpisodes] = useState([]);
 
@@ -17,8 +16,8 @@ export const Character = () => {
       return episode;
     });
     setEpisodes(() => [...newEpisodes]);
-    getEpisodesFromCharacter(episodes).then((data) => setEpisodesInfo(data));
-  }, [setEpisodesInfo]);
+    getEpisodesFromCharacter(episodes);
+  }, []);
 
   return (
     <>
@@ -27,11 +26,14 @@ export const Character = () => {
           <img src={char.image} alt="" />
         </div>
         <div>
+          Episodes
           {episodesInfo.length === 0 ? (
             <>...</>
           ) : (
-            episodesInfo.map((item) => (
-              <p style={{ color: "white" }}>{item.name}</p>
+            episodesInfo.map((item, index) => (
+              <p key={index} style={{ color: "white" }}>
+                {item.name}
+              </p>
             ))
           )}
         </div>

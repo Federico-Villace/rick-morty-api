@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const useCharacter = () => {
   const [character, setCharacter] = useState({});
+  const [episodesInfo, setEpisodesInfo] = useState([]);
 
   const navigate = useNavigate();
 
@@ -23,12 +24,9 @@ export const useCharacter = () => {
   };
 
   const getEpisodesFromCharacter = async (episodes) => {
-    const data = await fetch(
-      `https://rickandmortyapi.com/api/episode/${episodes}`
-    )
+    return await fetch(`https://rickandmortyapi.com/api/episode/${episodes}`)
       .then((res) => res.json())
-      .then((data) => data.results);
-    return data;
+      .then((data) => setEpisodesInfo(data.results));
   };
 
   return {
@@ -36,5 +34,6 @@ export const useCharacter = () => {
     getSingleCharacter,
     character,
     getEpisodesFromCharacter,
+    episodesInfo,
   };
 };
