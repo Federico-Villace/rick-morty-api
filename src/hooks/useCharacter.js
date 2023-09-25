@@ -6,10 +6,6 @@ export const useCharacter = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(character);
-  }, [character]);
-
   const getAllCharacters = () => {
     const data = fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
@@ -26,9 +22,19 @@ export const useCharacter = () => {
       });
   };
 
+  const getEpisodesFromCharacter = async (episodes) => {
+    const data = await fetch(
+      `https://rickandmortyapi.com/api/episode/${episodes}`
+    )
+      .then((res) => res.json())
+      .then((data) => data.results);
+    return data;
+  };
+
   return {
     getAllCharacters,
     getSingleCharacter,
     character,
+    getEpisodesFromCharacter,
   };
 };
