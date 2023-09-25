@@ -1,8 +1,17 @@
-# React + Vite
+# Rick and Morty app for teaching  
+## Data obtained from Rick and Morty API https://rickandmortyapi.com/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run the app 
+  - Install yarn if you don't have it
+  - Clone the project in the folder you want
+  - In the terminal run 'yarn install' to install dependencies
+  - To run the app 'yarn run dev'
 
-Currently, two official plugins are available:
+# Rock y Morty app para enseñanza 
+## Data obtenida de Rick y Morty API https://rickandmortyapi.com/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para correr la app 
+  - Instala yarn si no lo tienes.
+  - Clona el proyecto en la carpeta que quieras
+  - En la terminal ejecuta 'yarn install' para instalar dependencias.
+  - Para ejecutar la aplicación 'yarn run dev'
