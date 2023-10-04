@@ -6,7 +6,7 @@ export const SingleCharacter = (props) => {
 
   return (
     <li className="character-element" onClick={() => onSelected(id)}>
-      <img src={image} />
+      <img className="allCharacters-img" src={image} />
 
       <div className="character-card-props">
         <div>

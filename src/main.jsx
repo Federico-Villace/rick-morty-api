@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import { Character } from "./pages/Character";
+import { CharacterPage } from "./pages/Character";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/character",
-    element: <Character />,
+    element: <CharacterPage />,
   },
 ]);
 

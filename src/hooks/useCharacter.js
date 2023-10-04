@@ -23,8 +23,8 @@ export const useCharacter = () => {
       });
   };
 
-  const getEpisodesFromCharacter = async (episodes) => {
-    return await fetch(`https://rickandmortyapi.com/api/episode/${episodes}`)
+  const getEpisodesFromCharacter = (episodes) => {
+    return fetch(`https://rickandmortyapi.com/api/episode/${episodes}`)
       .then((res) => res.json())
       .then((data) => setEpisodesInfo(data.results));
   };
@@ -35,5 +35,6 @@ export const useCharacter = () => {
     character,
     getEpisodesFromCharacter,
     episodesInfo,
+    setEpisodesInfo,
   };
 };
