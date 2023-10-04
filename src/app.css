@@ -20,7 +20,7 @@ body {
 }
 
 .allCharacters-img {
-  max-width: 250px;
+  max-width: 255px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
