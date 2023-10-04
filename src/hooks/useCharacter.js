@@ -23,10 +23,12 @@ export const useCharacter = () => {
       });
   };
 
-  const getEpisodesFromCharacter = (episodes) => {
-    return fetch(`https://rickandmortyapi.com/api/episode/${episodes}`)
-      .then((res) => res.json())
-      .then((data) => setEpisodesInfo(data.results));
+  const getEpisodesFromCharacter = async (episodes) => {
+    const res = await fetch(
+      `https://rickandmortyapi.com/api/episode/[${episodes}]`
+    );
+    const data = await res.json();
+    setEpisodesInfo(data);
   };
 
   return {

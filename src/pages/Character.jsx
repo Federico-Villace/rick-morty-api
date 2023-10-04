@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useCharacter } from "../hooks/useCharacter";
 
@@ -7,22 +7,18 @@ export const CharacterPage = () => {
   const char = location.state;
   const { image, name, gender, species } = char;
 
-  const { getEpisodesFromCharacter, episodesInfo, setEpisodesInfo } =
-    useCharacter();
-
-  const [episodes] = useState([]);
+  const { getEpisodesFromCharacter, episodesInfo } = useCharacter();
 
   useEffect(() => {
-    char.episode.map((item) => {
-      const episode = parseInt(item.slice(40));
-      episodes.push(episode);
-    });
-    setTimeout(() => {
-      getEpisodesFromCharacter(episodes);
-    }, 1000);
-  }, [setEpisodesInfo]);
+    const episodeNumbers = char.episode.map((item) => parseInt(item.slice(40)));
 
-  console.log(episodesInfo);
+    // Make the API request inside a function to avoid synchronization issues
+    const fetchEpisodes = async () => {
+      await getEpisodesFromCharacter(episodeNumbers);
+    };
+
+    fetchEpisodes();
+  }, [char.episode, getEpisodesFromCharacter]);
 
   return (
     <>
@@ -39,7 +35,7 @@ export const CharacterPage = () => {
           <div>
             <h3 style={{ textAlign: "center" }}>Episodes</h3>
             <ul className="character-episodes">
-              {episodesInfo.length === 0 ? (
+              {(episodesInfo || []).length === 0 ? (
                 <>...</>
               ) : (
                 episodesInfo.map((item, index) => (
