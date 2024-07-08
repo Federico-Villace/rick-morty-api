@@ -122,6 +122,77 @@ label {
   overflow: auto;
   overscroll-behavior: auto;
 }
+.character-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.character-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  width: 100%;
+}
+
+.character-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  flex: 1;
+}
+
+.character-card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.character-card-info {
+  text-align: center;
+}
+
+.character-card-title {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.character-card-episodes-section {
+  flex: 2;
+  padding: 1.5em;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.character-card-episodes-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.character-card-episodes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.character-card-episode-item {
+  background: #e9ecef;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
 
 @media screen and (max-width: 500px) {
   .characters-list-container {

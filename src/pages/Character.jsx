@@ -21,33 +21,30 @@ export const CharacterPage = () => {
   }, [char.episode, getEpisodesFromCharacter]);
 
   return (
-    <>
-      <div className="character-page">
-        <article className="container">
-          <div>
-            <div style={{ textAlign: "center" }}>
-              <h3 style={{ marginBlockStart: "0.2em" }}>
-                {name} - {gender} - {species}
-              </h3>
-            </div>
-            <img src={image} alt={name} />
+    <div className="character-page">
+      <h3 className="character-card-episodes-title">Character Episodes</h3>
+
+      <article className="character-card">
+        <div className="character-card-header">
+          <img className="character-card-image" src={image} alt={name} />
+          <div className="character-card-info">
+            <h3 className="character-card-title">{`${name} - ${gender} - ${species}`}</h3>
           </div>
-          <div>
-            <h3 style={{ textAlign: "center" }}>Episodes</h3>
-            <ul className="character-episodes">
-              {(episodesInfo || []).length === 0 ? (
-                <>...</>
-              ) : (
-                episodesInfo.map((item, index) => (
-                  <li key={index} style={{ color: "white" }}>
-                    {item.name}
-                  </li>
-                ))
-              )}
-            </ul>
-          </div>
-        </article>
-      </div>
-    </>
+        </div>
+        <div className="character-card-episodes-section">
+          <ul className="character-card-episodes-list">
+            {(episodesInfo || []).length === 0 ? (
+              <>...</>
+            ) : (
+              episodesInfo.map((item, index) => (
+                <li key={index} className="character-card-episode-item">
+                  {item.name}
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+      </article>
+    </div>
   );
 };
